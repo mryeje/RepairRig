@@ -1,0 +1,1366 @@
+{
+  "schema": "1.0",
+  "rigify_version": "0.6.10",
+  "blender": "5.0.1",
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Root"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "VIS_upper_arm_ik_pole.L",
+      "parent": "root",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "VIS_upper_arm_ik_pole.R",
+      "parent": "root",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "VIS_thigh_ik_pole.L",
+      "parent": "root",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "VIS_thigh_ik_pole.R",
+      "parent": "root",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "torso",
+      "parent": "MCH-torso.parent",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {
+        "torso_parent": 1
+      }
+    },
+    {
+      "name": "hips",
+      "parent": "torso",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "chest",
+      "parent": "torso",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "spine_fk.001",
+      "parent": "MCH-spine.001",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "spine_fk",
+      "parent": "MCH-spine",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "tweak_spine",
+      "parent": "spine_fk",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "toe.L",
+      "parent": "MCH-toe.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_tweak.L",
+      "parent": "MCH-foot_tweak.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "shin_tweak.L",
+      "parent": "MCH-shin_tweak.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 0.0
+      }
+    },
+    {
+      "name": "shin_tweak.L.001",
+      "parent": "MCH-shin_tweak.L.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "thigh_tweak.L.001",
+      "parent": "MCH-thigh_tweak.L.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "toe.R",
+      "parent": "MCH-toe.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_tweak.R",
+      "parent": "MCH-foot_tweak.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "shin_tweak.R",
+      "parent": "MCH-shin_tweak.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 0.0
+      }
+    },
+    {
+      "name": "shin_tweak.R.001",
+      "parent": "MCH-shin_tweak.R.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "thigh_tweak.R.001",
+      "parent": "MCH-thigh_tweak.R.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "pelvis.L",
+      "parent": "ORG-spine",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "pelvis.R",
+      "parent": "ORG-spine",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_parent.L",
+      "parent": "ORG-spine",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {
+        "FK_limb_follow": 0.0,
+        "IK_FK": 0.0,
+        "IK_Stretch": 0.0,
+        "pole_vector": true,
+        "IK_parent": 1,
+        "pole_parent": 3
+      }
+    },
+    {
+      "name": "thigh_fk.L",
+      "parent": "MCH-thigh_parent.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "shin_fk.L",
+      "parent": "thigh_fk.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_fk.L",
+      "parent": "MCH-foot_fk.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_ik.L",
+      "parent": "MCH-thigh_ik_swing.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_tweak.L",
+      "parent": "MCH-thigh_tweak.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_parent.R",
+      "parent": "ORG-spine",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {
+        "FK_limb_follow": 0.0,
+        "IK_FK": 0.0,
+        "IK_Stretch": 0.0,
+        "pole_vector": true,
+        "IK_parent": 1,
+        "pole_parent": 3
+      }
+    },
+    {
+      "name": "thigh_fk.R",
+      "parent": "MCH-thigh_parent.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "shin_fk.R",
+      "parent": "thigh_fk.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_fk.R",
+      "parent": "MCH-foot_fk.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_ik.R",
+      "parent": "MCH-thigh_ik_swing.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_tweak.R",
+      "parent": "MCH-thigh_tweak.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "tweak_spine.001",
+      "parent": "spine_fk",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "spine_fk.002",
+      "parent": "MCH-spine.002",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "tweak_spine.002",
+      "parent": "MCH-pivot",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "spine_fk.003",
+      "parent": "MCH-spine.003",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "tweak_spine.003",
+      "parent": "spine_fk.003",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "brow.L",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "brow.R",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "eye.L",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "eye.R",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "jaw",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "lid.L",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {
+        "blink": 0.0
+      }
+    },
+    {
+      "name": "lid.R",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {
+        "blink": 0.0
+      }
+    },
+    {
+      "name": "mouth_corner.L",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "mouth_corner.R",
+      "parent": "ORG-spine.006",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Simple Face"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "hand_tweak.L",
+      "parent": "MCH-hand_tweak.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "forearm_tweak.L",
+      "parent": "MCH-forearm_tweak.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 0.0
+      }
+    },
+    {
+      "name": "forearm_tweak.L.001",
+      "parent": "MCH-forearm_tweak.L.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "upper_arm_tweak.L.001",
+      "parent": "MCH-upper_arm_tweak.L.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "upper_arm_parent.L",
+      "parent": "ORG-shoulder.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {
+        "FK_limb_follow": 0.0,
+        "IK_FK": 0.0,
+        "IK_Stretch": 0.0,
+        "pole_vector": true,
+        "IK_parent": 1,
+        "pole_parent": 6
+      }
+    },
+    {
+      "name": "upper_arm_fk.L",
+      "parent": "MCH-upper_arm_parent.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "forearm_fk.L",
+      "parent": "upper_arm_fk.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "hand_fk.L",
+      "parent": "MCH-hand_fk.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "upper_arm_ik.L",
+      "parent": "MCH-upper_arm_ik_swing.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "upper_arm_tweak.L",
+      "parent": "MCH-upper_arm_tweak.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.01_master.L",
+      "parent": "ORG-palm.01.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "thumb.01_master.L",
+      "parent": "ORG-palm.01.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_index.01.L",
+      "parent": "MCH-f_index.01_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.02.L",
+      "parent": "MCH-f_index.02_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.03.L",
+      "parent": "MCH-f_index.03_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.01.L.001",
+      "parent": "f_index.03.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.01.L",
+      "parent": "MCH-thumb.01_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.02.L",
+      "parent": "MCH-thumb.02_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.03.L",
+      "parent": "MCH-thumb.03_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.01.L.001",
+      "parent": "thumb.03.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.01_master.L",
+      "parent": "ORG-palm.02.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_middle.01.L",
+      "parent": "MCH-f_middle.01_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.02.L",
+      "parent": "MCH-f_middle.02_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.03.L",
+      "parent": "MCH-f_middle.03_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.01.L.001",
+      "parent": "f_middle.03.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.01_master.L",
+      "parent": "ORG-palm.03.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_ring.01.L",
+      "parent": "MCH-f_ring.01_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.02.L",
+      "parent": "MCH-f_ring.02_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.03.L",
+      "parent": "MCH-f_ring.03_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.01.L.001",
+      "parent": "f_ring.03.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.01_master.L",
+      "parent": "ORG-palm.04.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_pinky.01.L",
+      "parent": "MCH-f_pinky.01_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.02.L",
+      "parent": "MCH-f_pinky.02_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.03.L",
+      "parent": "MCH-f_pinky.03_drv.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.01.L.001",
+      "parent": "f_pinky.03.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "palm.L",
+      "parent": "DEF-hand.L",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "hand_tweak.R",
+      "parent": "MCH-hand_tweak.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "forearm_tweak.R",
+      "parent": "MCH-forearm_tweak.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 0.0
+      }
+    },
+    {
+      "name": "forearm_tweak.R.001",
+      "parent": "MCH-forearm_tweak.R.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "upper_arm_tweak.R.001",
+      "parent": "MCH-upper_arm_tweak.R.001",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {
+        "rubber_tweak": 1.0
+      }
+    },
+    {
+      "name": "upper_arm_parent.R",
+      "parent": "ORG-shoulder.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {
+        "FK_limb_follow": 0.0,
+        "IK_FK": 0.0,
+        "IK_Stretch": 0.0,
+        "pole_vector": true,
+        "IK_parent": 1,
+        "pole_parent": 6
+      }
+    },
+    {
+      "name": "upper_arm_fk.R",
+      "parent": "MCH-upper_arm_parent.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "forearm_fk.R",
+      "parent": "upper_arm_fk.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "hand_fk.R",
+      "parent": "MCH-hand_fk.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "upper_arm_ik.R",
+      "parent": "MCH-upper_arm_ik_swing.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "upper_arm_tweak.R",
+      "parent": "MCH-upper_arm_tweak.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.01_master.R",
+      "parent": "ORG-palm.01.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "thumb.01_master.R",
+      "parent": "ORG-palm.01.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_index.01.R",
+      "parent": "MCH-f_index.01_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.02.R",
+      "parent": "MCH-f_index.02_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.03.R",
+      "parent": "MCH-f_index.03_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_index.01.R.001",
+      "parent": "f_index.03.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.01.R",
+      "parent": "MCH-thumb.01_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.02.R",
+      "parent": "MCH-thumb.02_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.03.R",
+      "parent": "MCH-thumb.03_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thumb.01.R.001",
+      "parent": "thumb.03.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.01_master.R",
+      "parent": "ORG-palm.02.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_middle.01.R",
+      "parent": "MCH-f_middle.01_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.02.R",
+      "parent": "MCH-f_middle.02_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.03.R",
+      "parent": "MCH-f_middle.03_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_middle.01.R.001",
+      "parent": "f_middle.03.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.01_master.R",
+      "parent": "ORG-palm.03.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_ring.01.R",
+      "parent": "MCH-f_ring.01_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.02.R",
+      "parent": "MCH-f_ring.02_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.03.R",
+      "parent": "MCH-f_ring.03_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_ring.01.R.001",
+      "parent": "f_ring.03.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.01_master.R",
+      "parent": "ORG-palm.04.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {
+        "finger_curve": 0.0
+      }
+    },
+    {
+      "name": "f_pinky.01.R",
+      "parent": "MCH-f_pinky.01_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.02.R",
+      "parent": "MCH-f_pinky.02_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.03.R",
+      "parent": "MCH-f_pinky.03_drv.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "f_pinky.01.R.001",
+      "parent": "f_pinky.03.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "palm.R",
+      "parent": "DEF-hand.R",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Fingers"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "breast.L",
+      "parent": "ORG-spine.003",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "breast.R",
+      "parent": "ORG-spine.003",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "shoulder.L",
+      "parent": "ORG-spine.003",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "shoulder.R",
+      "parent": "ORG-spine.003",
+      "rotation_mode": "YXZ",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "neck",
+      "parent": "MCH-ROT-neck",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "head",
+      "parent": "MCH-ROT-head",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {
+        "neck_follow": 0.5,
+        "head_follow": 0.0
+      }
+    },
+    {
+      "name": "tweak_spine.005",
+      "parent": "neck",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "tweak_spine.006",
+      "parent": "MCH-spine.005",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "tweak_spine.004",
+      "parent": "spine_fk.003",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Torso"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "hand_ik.L",
+      "parent": "MCH-hand_ik.parent.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "upper_arm_ik_target.L",
+      "parent": "MCH-upper_arm_ik_target.parent.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "hand_ik.R",
+      "parent": "MCH-hand_ik.parent.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "upper_arm_ik_target.R",
+      "parent": "MCH-upper_arm_ik_target.parent.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Arm.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_ik.L",
+      "parent": "MCH-foot_ik.parent.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_spin_ik.L",
+      "parent": "foot_ik.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_heel_ik.L",
+      "parent": "foot_spin_ik.L",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_ik_target.L",
+      "parent": "MCH-thigh_ik_target.parent.L",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.L (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_ik.R",
+      "parent": "MCH-foot_ik.parent.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_spin_ik.R",
+      "parent": "foot_ik.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "foot_heel_ik.R",
+      "parent": "foot_spin_ik.R",
+      "rotation_mode": "ZXY",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "thigh_ik_target.R",
+      "parent": "MCH-thigh_ik_target.parent.R",
+      "rotation_mode": "QUATERNION",
+      "collections": [
+        "Leg.R (IK)"
+      ],
+      "properties": {}
+    }
+  ]
+}
