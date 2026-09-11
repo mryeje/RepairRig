@@ -5,13 +5,41 @@ existing Stage 2 RepairRig and its original proxy character. The metarig, genera
 control architecture, deformation bones and 109 Rigify drivers were retained.
 No Stage 4 animation library, custom animation runtime or new rig generator was built.
 
-The file opens at a working pose. Shift-Left Arrow returns to frame 1; Space plays
-frames 1-288 at 24 fps. Timeline markers name the phases. Numpad 0 toggles the
-review camera. The saved clean viewport hides overlays: Shift-Alt-Z is not needed;
-use the Viewport Overlays button (or Shift-Alt-Z only if mapped in your keymap).
-The standard Blender default overlay toggle is Shift-Alt-Z? To avoid keymap
-ambiguity, use the two-overlapping-circles button in the viewport header.
-Select RepairRig, enter Pose Mode, and enable overlays to see Rigify controls.
+The file opens at frame 170, a working pose. Shift-Left Arrow returns to frame 1;
+Space plays frames 1-288 at 24 fps. Timeline markers name the phases. Numpad 0
+toggles the review camera. Use the Viewport Overlays button (two overlapping
+circles) in the viewport header to show controls. Select RepairRig and enter
+Pose Mode. Enable the bundled Rigify add-on and allow the trusted file's embedded
+Rigify UI script to run to use its generated control panel. The saved animation
+uses native scene data and does not require the development runner.
+
+## Completion from the saved Stage 3 progress
+
+At commit `2a89cbf`, the interaction authoring, refinement, full-sequence tests,
+second-location experiment, component tests and review renders were complete.
+The documented main interaction file, second-location file and reopen report
+had not been saved. The local recovery files contained no Stage 3 scene.
+
+On 2026-09-11, the existing Stage 2 checkpoint was loaded and the final committed
+`09_stage3_build.py` and `11_stage3_refine.py` were executed once to materialize
+the missing deliverables. The final fitting values were already in the build
+script; no base generation, mannequin construction or fitting trials were rerun.
+Both armatures' names, parent topology and rest matrices were compared before
+and after. The Stage 2 checkpoint's SHA-256 remained unchanged.
+
+Both delivered files were reopened and all 288 frames evaluated. Hand-reach and
+tool-tip measurements matched the previous successful evidence exactly at both
+locations. All 109 Rigify drivers were valid; Action keys and handles survived
+saving unchanged; contact, actual grip and release checks passed. The saved files
+open at frame 170 with the five rig NLA tracks enabled and no active rig Action.
+The second file differs in screw-target location, with identical Action data.
+
+`tests/stage3_persistence.json` records source scripts, the base checksum and
+pre-save Action data. `tests/stage3_reopen_validation.json` records both delivered
+file checksums and reopened-scene measurements. `scripts/14_stage3_verify.py`
+rechecks existing files, NLA components and Pose Asset application in a fresh
+Blender session. `scripts/13_stage3_finalize.py` refuses to overwrite existing
+deliverables; ordinary continuation should open the saved Stage 3 file directly.
 
 ## Sequence and reusable ownership
 
