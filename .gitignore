@@ -3,3 +3,9 @@ __pycache__/
 renders/
 temp/
 cache/
+
+*.blend
+*.blend1
+renders/
+temp/
+cache/
