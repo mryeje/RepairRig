@@ -1,11 +1,15 @@
 __pycache__/
 *.pyc
-renders/
-temp/
-cache/
 
+# Blender binary files kept locally
 *.blend
 *.blend1
-renders/
 temp/
+renders/
 cache/
+
+# Generated test results and inspection images stay local.
+# Test scripts and Markdown documentation remain versioned.
+tests/**/*.json
+tests/**/*.txt
+tests/**/*.png
