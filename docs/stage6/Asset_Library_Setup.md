@@ -14,6 +14,17 @@ Tested with **Blender 5.0.1**. Use this version or test a newer version before p
 
 The build/test sessions did not overwrite your saved preferences; perform these steps in your normal Blender profile.
 
+## Important: poses and motion clips use different workflows
+
+| Content | Import/use workflow | Result |
+| --- | --- | --- |
+| Static `POSE_*` hand assets | Asset Browser, Pose Mode, select finger controls, **Apply Pose** | Sets current finger values; does not assign a timeline clip. With Auto Keying off, insert keys yourself if needed. |
+| Multi-frame `BODY_*`, `REACH_*`, `BRACE_*`, `TOOL_*`, `GESTURE_*` | **File > Append > E:\BlenderAssets\RepairRig\Actions\RepairRig_Motion.blend > Action**, select clips, Append | Local Action datablocks, selectable in Action Editor and usable in NLA after assignment to the correct owner/slot. |
+
+Motion clips remain visible in the existing Asset Browser catalogs, but **do not double-click them as poses to import animation**. Pose application can produce a static twitch without assigning an Action or importing persistent timeline animation. The absence of a motion Action in Action Editor after that operation is not evidence of missing keyframes in the library.
+
+The dedicated motion file already contains all 15 slotted Actions and zero objects. No replacement motion file or rig rebuild is required. File > Append is the supported motion-import workflow even when you do not intend to edit the animation. See the exact reach test in [New_Repair_Project_Workflow.md](New_Repair_Project_Workflow.md).
+
 ## Contents and ownership
 
 | File | Assets / responsibility |
@@ -34,7 +45,7 @@ The fitted attachment sockets deliberately belong to the character package, not 
 ## Append versus Link
 
 - **Append the Character Collection** for ordinary projects. It is local and editable. Do not append individual rig/mesh/helper objects separately.
-- **Append Actions** when local timing or curve edits are expected. Make a single-user copy before changing shared shot usage.
+- **Append multi-frame Actions through File > Append**, then assign them in Action Editor/NLA. Make a single-user copy before changing shared shot usage.
 - **Apply Pose Assets through Asset Browser**; application sets a pose, not an animated timeline clip.
 - **Append interactive tools** for the tested automatic binding/UI workflow.
 - **Link tool models** when central geometry updates are required. A fully linked tool Collection is read-only; the binder intentionally rejects it. For advanced use, keep the appended local tool wrappers/constraints and replace their mesh data with linked mesh datablocks through **File → Link → tool .blend → Mesh**, then the mesh datablock selector in Object Data Properties. This preserves local attachment ownership while geometry remains linked. Verify transforms, materials, contact offsets and deformation after each model update. This advanced linked-geometry variant is not the validated default.

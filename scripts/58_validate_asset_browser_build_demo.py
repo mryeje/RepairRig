@@ -44,16 +44,24 @@ def execute():
   for p in r.pose.bones:p.select=any(f in p.name for f in ['f_index','f_middle','f_ring','f_pinky','thumb']) and not p.name.startswith(('DEF-','MCH-','ORG-'))
   for name in sorted(n for n in assets if n.startswith('POSE_')):
    a=assets[name]
+   active_before=r.animation_data.action
+   slot_before=r.animation_data.action_slot
    with bpy.context.temp_override(area=browser,region=region(browser),asset=a):
     status=bpy.ops.poselib.apply_pose_asset('INVOKE_DEFAULT',blend_factor=1)
    assert status=={'FINISHED'},(name,status)
+   assert r.animation_data.action==active_before and r.animation_data.action_slot==slot_before
+   # Capture before the comparison-only Append below: Apply Pose need not
+   # persist an Action datablock and must not replace the timeline Action.
+   retained_as_local_action=name in bpy.data.actions
    # The operator may keep its imported Action temporary: compare against a local appended library Action.
    if name not in bpy.data.actions:bpy.ops.wm.append(directory=a.full_library_path+'/Action/',filename=name,do_reuse_local_id=True)
    action=bpy.data.actions[name];errors=[]
    for fc in curves(action):
     value=r.path_resolve(fc.data_path);errors.append(abs((value if isinstance(value,(float,int,bool)) else value[fc.array_index])-fc.evaluate(1)))
    error=max(errors);assert error<1e-5,(name,error)
-   report['pose_assets'][name]={'result':list(status),'max_channel_error':error}
+   report['pose_assets'][name]={'result':list(status),'max_channel_error':error,
+    'timeline_action_unchanged':True,'active_action':active_before.name,
+    'local_action_after_apply_before_comparison_append':retained_as_local_action}
   report['contacts']={};report['states']={}
   for short,state,ref in [('Screwdriver',1,'REF_ScrewdriverTip'),('Pliers',2,'REF_PliersContact')]:
    name='POSE_Grip_'+short+'_R_Production';a=assets[name]

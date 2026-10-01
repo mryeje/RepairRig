@@ -6,6 +6,28 @@ Source: `E:\RepairRig\blend\RepairRig_05F_ProductionCharacter_HandPolished.blend
 
 ## Delivered files
 
+### Action-import workflow clarification (2026-10-01)
+
+Manual testing exposed an important distinction missing from the original instructions: **Asset Browser pose application is not multi-frame Action import**. A BODY/REACH thumbnail can be applied through the pose workflow as a static state without assigning persistent timeline animation. The original automated animation tests used File > Append, not double-click motion playback.
+
+The supported split is now explicit in the setup and new-project guides:
+
+- Static `POSE_*`: select finger controls in Pose Mode, then Asset Browser **Apply Pose**. Key a shot-local hand Action when animation is needed.
+- Multi-frame BODY/REACH/BRACE/TOOL/GESTURE: **File > Append > E:\BlenderAssets\RepairRig\Actions\RepairRig_Motion.blend > Action**, then choose the imported Action and its existing slot in the correct owner's Action Editor. Use NLA for layering.
+
+The existing motion file was verified rather than rebuilt: **15 Actions, zero objects**, with unchanged source file SHA-256 `a220eea60e13002c969d5892796a71810c17f944885aff961bde447d57194ce1`. The motion catalog entries remain discoverable, but they are not a promise of double-click animation import. No rig, motion, pose, tool, demo or Stage 5F Blender file was changed for this clarification.
+
+Fresh-project regression results in Blender 5.0.1:
+
+- Direct Collection Append and Collection Instance > Make Instances Real (Parent and Keep Hierarchy enabled) both passed. The realized rig's mesh modifier and reach target references resolved to scene objects.
+- `REACH_Forward_Mid_R`, `REACH_Forward_Low_R`, `REACH_Forward_Low_L`, and `BRACE_Forward_L` passed samples at frames **1, 17, 33**, including actual evaluated deform-hand movement, slot assignment and constraint F-curve resolution.
+- `BODY_Kneel_L`, `TOOL_Screwdriver_CW_R` on its work-roll owner, and `GESTURE_Talk_OneHand_R` passed representative multi-frame channel checks.
+- Direct reach playback matched NLA playback and survived saving/reopening disposable regression scenes.
+- All **12 external canonical/production hand Pose Assets** applied through Blender's native Asset Browser operator with **zero channel error**. Each left the active reach Action and slot unchanged. None retained a local pose Action immediately after Apply Pose; comparison-only Append was performed afterward by the test.
+- Fresh-project UI switching and screwdriver/pliers contact checks passed again.
+
+Regression sources: `scripts/65_test_motion_import.py` and `scripts/58_validate_asset_browser_build_demo.py --validate-only` in the development repository. Evidence copies: `Docs/Motion_Import_Validation.json` and `Docs/Pose_Import_Validation.json`. The disposable test scenes remain under the ignored development `tests/library/` directory; they are not additional library assets. Documentation and regression coverage are the only changes; compatibility and character-specific limitations below still apply.
+
 ```text
 RepairRig/
   blender_assets.cats.txt
